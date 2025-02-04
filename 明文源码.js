@@ -100,7 +100,7 @@ export default {
 			const upgradeHeader = request.headers.get("Upgrade");
 			const url = new URL(request.url);
 			if (!upgradeHeader || upgradeHeader !== "websocket") {
-				if (env.ADD) addresses = await ADD(env.ADD);
+				if (env.epeius.get('ADD')) addresses = await ADD(env.epeius.get('ADD'));
 				if (env.ADDAPI) addressesapi = await ADD(env.ADDAPI);
 				if (env.ADDCSV) addressescsv = await ADD(env.ADDCSV);
 				DLS = Number(env.DLS) || DLS;
